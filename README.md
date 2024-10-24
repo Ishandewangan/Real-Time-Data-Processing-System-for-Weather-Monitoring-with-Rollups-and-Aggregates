@@ -31,3 +31,10 @@ logging: To log events and errors during execution.
 To install these dependencies, run:
 
 pip install -r requirements.txt
+
+Application Workflow
+Weather Data Fetching: At regular intervals, the application requests weather data for the specified cities from the OpenWeatherMap API.
+Data Storage: The fetched data is stored in an SQLite database.
+Daily Summaries: A daily weather report is generated at the end of each day, summarizing the average, max, and min temperatures, humidity, and wind speed.
+Alerts: If the temperature exceeds a predefined threshold, an alert email is sent to the user.
+Visualization: The system generates visual charts to display weather trends and temperature alerts.
