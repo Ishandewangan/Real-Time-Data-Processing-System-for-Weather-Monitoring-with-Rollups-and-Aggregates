@@ -1,40 +1,32 @@
 # Real-Time-Data-Processing-System-for-Weather-Monitoring-with-Rollups-and-Aggregates
 
-Overview
-This project is designed to monitor real-time weather data from various cities, calculate daily summaries, send alerts for high temperatures, and display visual trends. The application fetches weather data using the OpenWeatherMap API and stores it in an SQLite database. Additionally, it sends email alerts when the temperature crosses a defined threshold.
+## Overview
+This project is a weather monitoring and alert system that periodically fetches weather data from the OpenWeatherMap API, calculates daily weather summaries, and triggers alerts if certain conditions are met (e.g., temperature exceeds a threshold). The system stores weather data in a SQLite database and provides visualizations for daily summaries, historical trends, and triggered alerts.
 
-Features
-Real-time Weather Fetching: Collects weather data such as temperature, humidity, and wind speed for multiple cities.
-Daily Summaries: Generates daily summaries with average, maximum, and minimum temperatures, humidity, and dominant weather conditions.
-Temperature Alerts: Sends email alerts if the temperature exceeds a user-defined threshold for consecutive readings.
-Data Visualization: Displays visual trends of weather data and triggered alerts using matplotlib.
-Historical Trends: Stores and shows historical weather data from an SQLite database.
-Design Choices
-API Usage: The OpenWeatherMap API is used for fetching real-time weather data for various cities.
-Database: SQLite is chosen for lightweight, local storage of weather data.
-Alerts: Email alerts are sent using Gmail's SMTP server whenever the temperature exceeds a predefined threshold.
-Scheduling: Python's schedule module is used to automate data fetching and report generation at regular intervals (e.g., every 5 minutes).
-Visualization: Matplotlib is used to create visual representations of daily weather summaries and historical trends.
-Error Handling: The program is designed to handle API request failures and database errors gracefully.
-Dependencies
-The following Python packages are required to run the application:
+## Features
+- Fetches real-time weather data for multiple cities.
+- Stores daily weather summaries (average, max, min temperature, humidity, wind speed, and dominant condition).
+- Triggers alerts when the temperature exceeds a configurable threshold for a set number of consecutive readings.
+- Sends email notifications for triggered alerts.
+- Visualizes daily weather summaries and historical trends.
+- SQLite database to store historical data.
 
-requests: To fetch weather data from the OpenWeatherMap API.
-pandas: For data manipulation and aggregation.
-matplotlib: For creating visual plots of weather data.
-sqlite3: To store weather data in a local database.
-smtplib: For sending email alerts via Gmail.
-schedule: To schedule periodic data fetching.
-logging: To log events and errors during execution.
+## Design Choices
+- **Data Fetching:** The weather data is fetched using the OpenWeatherMap API for selected cities.
+- **Database:** SQLite is used to store the weather summaries and alert triggers. This choice is made for simplicity and local storage.
+- **Visualization:** Matplotlib is used to plot the daily summaries and historical trends.
+- **Alerts:** Email alerts are sent using Python's `smtplib` when a temperature exceeds the defined threshold.
+- **Scheduling:** The weather data is fetched at regular intervals using the `schedule` library.
 
+## Installation
 
-To install these dependencies, run:
+### Dependencies
+To set up the project, you'll need the following:
 
+1. **Python** (Version 3.8+)
+2. **pip** - Python's package installer.
+
+You can install the required dependencies using the following command:
+
+```bash
 pip install -r requirements.txt
-
-Application Workflow
-Weather Data Fetching: At regular intervals, the application requests weather data for the specified cities from the OpenWeatherMap API.
-Data Storage: The fetched data is stored in an SQLite database.
-Daily Summaries: A daily weather report is generated at the end of each day, summarizing the average, max, and min temperatures, humidity, and wind speed.
-Alerts: If the temperature exceeds a predefined threshold, an alert email is sent to the user.
-Visualization: The system generates visual charts to display weather trends and temperature alerts.
