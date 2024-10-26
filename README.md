@@ -28,5 +28,14 @@ To set up the project, you'll need the following:
 
 You can install the required dependencies using the following command:
 
-```bash
-pip install -r requirements.txt
+  ```bash
+  pip install -r requirements.txt
+
+## Running the Application
+1. **Clone the repository**:
+  ```bash
+   git clone <your-repository-url>
+   cd Real-Time-Data-Processing-System-for-Weather-Monitoring-with-Rollups-and-Aggregates
+
+
+
