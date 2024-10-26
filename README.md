@@ -28,14 +28,19 @@ To set up the project, you'll need the following:
 
 You can install the required dependencies using the following command:
 
-  ```bash
-  pip install -r requirements.txt
+     ```bash
+     pip install -r requirements.txt
 
 ## Running the Application
 1. **Clone the repository**:
-  ```bash
+   ```bash
    git clone <your-repository-url>
    cd Real-Time-Data-Processing-System-for-Weather-Monitoring-with-Rollups-and-Aggregates
+2. **Run Jupyter Notebook**:
+    ```bash
+      jupyter notebook
+  Then open weatherMonitoringlive.ipynb in the browser interface. 
+
 
 
 
