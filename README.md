@@ -28,7 +28,7 @@ To set up the project, you'll need the following:
 
 You can install the required dependencies using the following command:
 
-     ```bash
+    
      pip install -r requirements.txt
 
 ## Running the Application
